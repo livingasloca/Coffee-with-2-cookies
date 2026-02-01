@@ -8,10 +8,10 @@
 }
 :root{
     --color-pink: #064e3b;
-    --color-text-pink: #10b981;
-    --color-heart: #10b981;
-    --color-bg-letter: #d1fae5;
-    --color-border: #047857;
+    --color-text-pink: #FF7882;
+    --color-heart: #FF7882;
+    --color-bg-letter: #fff8e4;
+    --color-border: #DACCBF;
 
 }
 html{
