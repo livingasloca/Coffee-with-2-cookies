@@ -1,192 +1,161 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
-*{padding:0;margin:0;box-sizing:border-box}
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 :root{
---color-pink:#064e3b;
---color-white:#ffffff;
---color-black:#0f172a;
---color-text-pink:#10b981;
---color-heart:#10b981;
---color-bg-letter:#d1fae5;
---color-border:#047857;
+    --color-pink: #064e3b;
+    --color-white: #fff;
+    --color-black: #0f172a;
+    --color-text-pink: #10b981;
+    --color-heart: #10b981;
+    --color-bg-letter: #d1fae5;
+    --color-border: #047857;
 }
-
-html{height:100%}
-
-body{
-position:relative;
-font-size:16px;
-height:100%;
-background-image:linear-gradient(var(--color-pink),var(--color-pink));
+html{
+    height: 100%;
 }
-
+body {
+    position: relative;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image:linear-gradient(var(--color-pink), var(--color-pink));
+}
 #wrapper{
-position:relative;
-background-image:
-linear-gradient(0deg,transparent 24%,rgba(255,255,255,.15) 25%,rgba(255,255,255,.15) 26%,transparent 27%,transparent 74%,rgba(255,255,255,.15) 75%,rgba(255,255,255,.15) 76%,transparent 77%,transparent),
-linear-gradient(90deg,transparent 24%,rgba(255,255,255,.15) 25%,rgba(255,255,255,.15) 26%,transparent 27%,transparent 74%,rgba(255,255,255,.15) 75%,rgba(255,255,255,.15) 76%,transparent 77%,transparent);
-background-size:80px 80px;
-height:100%;
-overflow:hidden;
-z-index:1;
+    position: relative;
+    background-color: transparent;
+    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.18) 25%, rgba(255, 255, 255, 0.18) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.18) 75%, rgba(255, 255, 255, 0.18) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.18) 25%, rgba(255, 255, 255,0.18) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.18) 75%, rgba(255, 255, 255, 0.18) 76%, transparent 77%, transparent);
+    height:100%;
+    background-size:80px 80px;
+    overflow: hidden;
+    z-index: 1;
 }
-
-.flag__birthday{display:flex;justify-content:space-between;transform:translateY(-200px);animation:translateYFlag 1.5s 2s forwards}
-@keyframes translateYFlag{to{transform:translateY(-10px)}}
-
-.flag__birthday .flag__left{transform:rotate(-10deg) translate(-20px,30px)}
-.flag__birthday .flag__right{transform:rotate(10deg) translate(20px,30px) scaleX(-1)}
-
-.content{width:100%;display:flex;padding-top:3rem}
-
-.left,.right{display:flex;flex-direction:column;justify-content:center;align-items:center}
-.left{width:40%}
-.right{width:60%}
-
-.left .btn{transform:scale(0);animation:scaleCricle 2s 16s forwards ease-in-out}
-
+.flag__birthday{
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-200px);
+    animation: translateYFlag 1.5s 2s forwards;
+}
+@keyframes translateYFlag{
+    to{
+        transform: translateY(-10px);
+    }
+}
+.flag__birthday .flag__left{
+    transform: rotate(-10deg) translate(-20px,30px);
+}
+.flag__birthday .flag__right{
+    transform: rotate(10deg) translate(20px,30px) scaleX(-1);
+}
+.content{
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding-top: 3rem;
+}
+.content .left, .content .right{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content .left{
+    width: 40%;
+}
+.content .right{
+    width: 60%;
+}
+.left .btn{
+    transform: scale(0);
+    animation: scaleCricle 2s 16s forwards ease-in-out;
+}
 #btn__letter{
-margin-top:30px;
-background-color:var(--color-text-pink);
-padding:5px 15px;
-font-size:1rem;
-border-radius:50px;
-border:3px solid var(--color-black);
-font-family:"Sriracha",cursive;
-display:flex;
-align-items:center;
-cursor:pointer;
-transition:.5s;
+    position: relative;
+    margin-top: 30px;
+    background-color: var(--color-text-pink);
+    outline: none;
+    padding: 5px 15px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: 3px solid var(--color-black);
+    font-family: "Sriracha", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transform: scale(1);
+    transition: all .5s ease-in-out;
 }
-
+#btn__letter:active{
+    transform: scale(0.7);
+}
+#btn__letter i{
+    margin-left: 5px;
+}
 #btn__letter:hover{
-background-color:var(--color-heart);
-color:#fff;
-box-shadow:0 3px 8px rgba(0,0,0,.24);
+    border-color: var(--color-heart);
+    background-color: var(--color-heart);
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
+#btn__letter:hover i{
+    animation: rotateHeart 1s infinite linear;
+}
+@keyframes rotateHeart{
+    0%,50%, 100%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(12deg);
+    }
+    75%{
+        transform: rotate(-12deg);
+    }
+}
 .title{
-width:100%;
-display:flex;
-justify-content:center;
-font-family:"Titan One",sans-serif;
-font-size:3rem;
-flex-direction:column;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Titan One", sans-serif;
+    font-size: 3rem;
+    flex-direction: column;
+    perspective: 1000px;
 }
-
-.title .happy,.title .birthday{
-display:flex;
-justify-content:center;
-text-shadow:4px 4px var(--color-black),-4px 4px var(--color-black),4px -4px var(--color-black),-4px -4px var(--color-black),4px 8px 0 var(--color-black);
+.title .happy, .title .birthday{
+    position: relative;
+    text-shadow: 4px 4px var(--color-black), 
+                -4px 4px var(--color-black), 
+                4px -4px var(--color-black), 
+                -4px -4px var(--color-black), 
+                4px 8px 0 var(--color-black);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
 }
-
-.title .happy{color:var(--color-white)}
-.title .birthday{color:var(--color-text-pink)}
-
-.date__of__birth,.name{
-display:flex;
-align-items:center;
-background-color:var(--color-text-pink);
-border-radius:50px;
-margin-top:20px;
-font-family:"Sriracha",cursive;
-border:3px solid var(--color-black);
+.title .happy{
+    color: var(--color-white);
 }
-
-.date__of__birth span{font-size:1.2rem;font-weight:bold}
-
-.name span{
-font-family:'Dancing Script',cursive;
-font-size:1.7rem;
-margin:0 20px;
+.title .happy span, .title .birthday span{
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+    animation: txtTranslateY .5s var(--t) forwards;
 }
-
-.content .right .image{
-width:400px;
-height:400px;
-border-radius:50%;
-overflow:hidden;
-border:6px solid var(--color-black);
+@keyframes txtTranslateY{
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
 }
-
-.content .right .image img{width:100%;object-fit:cover}
-
-.cricle{
-position:absolute;
-top:20px;
-right:50px;
-transform:scale(0);
-animation:scaleCricle 3s 15s forwards ease-in-out;
-}
-
-@keyframes scaleCricle{
-0%{transform:scale(0)}
-20%{transform:scale(1.2)}
-100%{transform:scale(1)}
-}
-
-.text__cricle{
-width:100px;
-height:100px;
-background-color:var(--color-text-pink);
-border-radius:50%;
-border:5px solid var(--color-black);
-display:flex;
-justify-content:center;
-align-items:center;
-animation:rotateCricle 5s linear infinite;
-}
-
-@keyframes rotateCricle{to{transform:rotate(360deg)}}
-
-.text__cricle span{
-position:absolute;
-transform:rotate(calc(var(--i)*24deg));
-transform-origin:0 45px;
-font-family:"Sriracha",cursive;
-font-size:.7rem;
-}
-
-.fa-heart{
-color:var(--color-heart);
-filter:drop-shadow(0 0 3px var(--color-heart));
-animation:scaleHeart 1s infinite linear;
-}
-
-@keyframes scaleHeart{50%{transform:scale(1.2)}}
-
-.boxMail{
-position:fixed;
-background:rgba(0,0,0,.8);
-width:100%;
-height:100%;
-opacity:0;
-top:0;
-display:flex;
-justify-content:center;
-align-items:center;
-transform:scale(.3);
-visibility:hidden;
-transition:.5s;
-z-index:100000000;
-}
-
-.boxMail.active{
-opacity:1;
-visibility:visible;
-transform:scale(1);
-}
-
-.boxMail .fa-xmark{
-position:fixed;
-top:0;
-right:0;
-font-size:30px;
-padding:10px 25px;
-cursor:pointer;
-color:white;
-z-index:1000000000;
+.title .birthday{
+    color: var(--color-text-pink);
 }
